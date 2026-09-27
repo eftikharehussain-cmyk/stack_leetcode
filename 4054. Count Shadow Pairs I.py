@@ -1,3 +1,4 @@
+# first mode
 class Solution:
     def shadowPairs(self, nums: list[int]) -> int:
         
@@ -15,3 +16,22 @@ class Solution:
                     cnt += 1
             i -= 1
         return cnt
+    
+# second mode
+from bisect import bisect_left
+class Solution:
+    def shadowPairs(self, nums: list[int]) -> int:
+        ans = 0
+        s = []
+        
+        for i in nums:
+            while s and s[-1] > i:
+                s.pop()
+            ans += bisect_left(s, i)
+            s.append(i)
+        return ans
+nums = [3, 1, 4, 1, 5]
+
+sol = Solution()
+
+print(sol.shadowPairs(nums))
