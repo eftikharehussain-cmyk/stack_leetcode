@@ -1,0 +1,14 @@
+for t in range(int(input())):
+    n=int(input())
+    s=input()
+    if s[0]==1:
+        print(s.count("0"))
+    else:
+        j=0
+        for z in s:
+            if z=="0":
+                j+=1
+            else:
+                break
+        w=min(s.count("1"),s.count("0")-j)
+        print(w)
