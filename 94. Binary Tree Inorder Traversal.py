@@ -17,7 +17,7 @@ class solution:
             res.append(cur.val)
             cur = cur.right
         return res
-
+     
 root = treeNode(1)
 root.left = treeNode(2)
 root.right = treeNode(3)
